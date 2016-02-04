@@ -6,6 +6,11 @@
     <h1>Your results</h1>
 
     <p>You answered {{ correct }} of {{ total }} questions correctly.</p>
+
+    {% if correct >= 5 %}
+        <img src="/static/very-nice.jpg">
+    {% endif %}
+
     <dl>
         {% for q in questions %}
             <dt><strong>{{ q.title }}</strong></dt>

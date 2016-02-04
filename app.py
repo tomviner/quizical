@@ -10,6 +10,18 @@ app = Flask(__name__)
 def hello_world():
     return render_template('index.html')
 
+@app.route('/static/<path:path>')
+def send_image(path):
+    return send_from_directory('static', path)
+
+"""
+@app.route('/result-test')
+def question():
+    return render_template('results.html', **{
+        'correct': 5,
+    })
+"""
+
 @app.route('/question')
 def question():
     data = json.load(open('questions.json'))
@@ -24,7 +36,6 @@ def question():
         })
 
     return data
-
 
 
 
