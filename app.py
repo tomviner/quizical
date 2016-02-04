@@ -15,7 +15,7 @@ def get_question():
     return title, correct, answers
 
 @app.route('/')
-def hello_world():
+def index():
     session["current_question"] = 0
     session["score"] = 0
     session["answers"] = []
@@ -24,14 +24,6 @@ def hello_world():
 @app.route('/static/<path:path>')
 def send_image(path):
     return send_from_directory('static', path)
-
-"""
-@app.route('/result-test')
-def question():
-    return render_template('results.html', **{
-        'correct': 5,
-    })
-"""
 
 @app.route('/question', methods=["GET"])
 def question():
@@ -48,7 +40,9 @@ def submit_question():
     option = request.form["answer"]
     title, correct, answers = get_question()
     if option not in answers:
-        return abort(400)
+        return abort(
+            400,
+            "{option} is not an option for {title}".format(**locals()))
 
     session["score"] += int(option == correct)
     session["current_question"] += 1
