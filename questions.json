@@ -63,6 +63,13 @@
             "709",
             "967"
         ],
+        [
+            "What is the capital city of India?",
+            "New Delhi",
+            "Mumbai",
+            "Calcutta",
+            "Hyderabad"
+        ],
         null
     ]
 }
