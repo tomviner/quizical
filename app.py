@@ -18,6 +18,7 @@ def get_question():
 def hello_world():
     session["current_question"] = 0
     session["score"] = 0
+    session["answers"] = []
     return render_template('index.html')
 
 @app.route('/static/<path:path>')
@@ -45,24 +46,30 @@ def question():
 @app.route('/question', methods=["POST"])
 def submit_question():
     option = request.form["answer"]
-    _, correct, answers = get_question()
+    title, correct, answers = get_question()
     if option not in answers:
         return abort(400)
 
     session["score"] += int(option == correct)
     session["current_question"] += 1
+    session["answers"].append({
+        'title': title,
+        'is_correct': option == correct,
+        'user_answer': option,
+        'correct_answer': correct,
+    })
     if not get_question():
         return redirect(url_for('.score'))
 
-    return redirect(url_for('.hello_world'))
+    return redirect(url_for('.question'))
 
 @app.route('/score', methods=["GET"])
 def score():
-    return "Done"
-
-
-
-
+    return render_template('results.html', **{
+        'correct': session["score"],
+        'total': len(data['questions'])-1,
+        'questions': session["answers"],
+    })
 
 if __name__ == '__main__':
     app.run(debug=1)
