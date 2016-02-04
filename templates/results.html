@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Thank you!</title>
+</head>
+<body>
+    <h1>Your results</h1>
+
+    <p>You answered {{ correct }} of {{ total }} questions correctly.</p>
+    <dl>
+        {% for q in questions %}
+            <dt><strong>{{ q.title }}</strong></dt>
+            <dd><strong>Your answer</strong>{{ q.user_answer }}.</dd>
+            {% if q.is_correct %}<dd class="error"><strong>Correct answer was</strong>{{ q.correct_answer }}.</dd>{% endif %}
+        {% endfor %}
+    </dl>
+    <a href="#">Start over</a>
+</body>

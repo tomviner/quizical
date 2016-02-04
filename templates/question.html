@@ -6,8 +6,8 @@
     <h1>{{ question_title }}</h1>
     <form action="" method="POST">
         <ul>
-        {% for q in questions %}
-            <li><input type="radio" name="answer" value="{{q.id}}">{{ q.title }}</li>
+        {% for a in answers %}
+            <li><input type="radio" name="answer" value="{{a.id}}">{{ a.title }}</li>
         {% endfor %}
         </ul>
         <input type="submit" value="Answer!">
