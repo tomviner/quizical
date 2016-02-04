@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>{{ question_title }}</title>
+</head>
+<body>
+    <h1>{{ question_title }}</h1>
+    <form action="" method="POST">
+        <ul>
+        {% for q in questions %}
+            <li><input type="radio" name="answer" value="{{q.id}}">{{ q.title }}</li>
+        {% endfor %}
+        </ul>
+        <input type="submit" value="Answer!">
+    </form>
+</body>
+
