@@ -15,7 +15,7 @@
         {% for q in questions %}
             <dt><strong>{{ q.title }}</strong></dt>
             <dd><strong>Your answer</strong>{{ q.user_answer }}.</dd>
-            {% if q.is_correct %}<dd class="error"><strong>Correct answer was</strong>{{ q.correct_answer }}.</dd>{% endif %}
+            {% if not q.is_correct %}<dd class="error"><strong>Correct answer was</strong>{{ q.correct_answer }}.</dd>{% endif %}
         {% endfor %}
     </dl>
     <a href="#">Start over</a>
