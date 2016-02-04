@@ -7,7 +7,7 @@
     <form action="" method="POST">
         <ul>
         {% for q in answers %}
-            <li><input type="radio" name="answer" value="{{ q }}">{{ q }}</li>
+            <li><label><input type="radio" name="answer" value="{{ q }}">{{ q }}</label></li>
         {% endfor %}
         </ul>
         <input type="submit" value="Answer!">
