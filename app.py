@@ -1,6 +1,8 @@
 import json
 import random
-from flask import Flask, request, render_template, session, abort, redirect, url_for
+
+from flask import (Flask, abort, redirect, render_template, request, session,
+                   url_for)
 
 app = Flask(__name__)
 app.secret_key = "aoieghh;oisahg;oisaehg;oiesag;oieagh;oieah;oiea;oa"
