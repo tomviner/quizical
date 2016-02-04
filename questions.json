@@ -42,6 +42,34 @@
             "24",
             "7"
         ],
+        [
+            "Who was the second man on the moon?",
+            "Buzz Aldrin",
+            "Neil Armstrong",
+            "Stanley Kubrick",
+            "Robert Caulfield"
+        ],
+        [
+            "The Python programming language was named after:",
+            "The Monty Python television programme",
+            "Guido van Rossum's childhood pet",
+            "The Nokia Snake game",
+            "The Oracle of Delphi"
+        ],
+        [
+            "What is the world's largest living animal?",
+            "Blue whale",
+            "Diplodocus",
+            "Giant redwood",
+            "Your mom"
+        ],
+        [
+            "How many league goals did Pelé score in his career?",
+            "541",
+            "233",
+            "709",
+            "967"
+        ],
         null
     ]
 }
