@@ -12,8 +12,10 @@
 
     <p>You answered {{ correct }} of {{ total }} questions correctly.</p>
 
-    {% if correct >= 5 %}
+    {% if correct >= 8 %}
         <img src="/static/very-nice.jpg">
+    {% else %}
+        <img src="/static/fail.jpg">
     {% endif %}
 
     <dl>
